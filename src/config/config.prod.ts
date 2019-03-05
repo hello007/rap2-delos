@@ -4,7 +4,7 @@ import { IConfigOptions } from "../types";
 let config: IConfigOptions =  {
     version: '2.3',
     serve: {
-        port: (process.env.EXPOSE_PORT && parseInt(process.env.EXPOSE_PORT)) || 8080,
+        port: (process.env.EXPOSE_PORT && parseInt(process.env.EXPOSE_PORT)) || 18888,
     },
     keys: ['some secret hurr'],
     session: {
@@ -12,10 +12,10 @@ let config: IConfigOptions =  {
     },
     db: {
         dialect: 'mysql',
-        host: process.env.MYSQL_URL || 'localhost',
+        host: process.env.MYSQL_URL || '192.9.210.89',
         port: (process.env.MYSQL_PORT && parseInt(process.env.MYSQL_PORT)) || 3306,
         username: process.env.MYSQL_USERNAME || 'root',
-        password: process.env.MYSQL_PASSWD || '',
+        password: process.env.MYSQL_PASSWD || 'root123456',
         database: process.env.MYSQL_SCHEMA || 'rap',
         pool: {
             max: 80,
@@ -26,8 +26,9 @@ let config: IConfigOptions =  {
         logging: false,
     },
     redis: {
-        host: process.env.REDIS_URL || 'localhost',
-        port: (process.env.REDIS_PORT && parseInt(process.env.REDIS_PORT)) || 6379
+        host: process.env.REDIS_URL || '192.9.200.183',
+        port: (process.env.REDIS_PORT && parseInt(process.env.REDIS_PORT)) || 6379,
+        auth_pass: 'foobared'
     },
     mail: {
       host: 'smtp-mail.outlook.com',
